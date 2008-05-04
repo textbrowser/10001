@@ -1,0 +1,19 @@
+.TH stop_user_processes.sh 1 "March 18, 2007"
+.SH NAME
+stop_user_processes.sh
+.SH SYNOPSIS
+.B stop_user_processes.sh [options]
+.SH DESCRIPTION
+.B stop_user_processes.sh
+is a script that allows the superuser to CONTINUE or STOP a user's processes. The script supports both interactive and non-interactive modes.
+.SH OPTIONS
+.IP "-c"
+Send a CONTINUE signal.
+.IP "-f"
+Force the action to occur, i.e., don't prompt.
+.IP "-s"
+Send a STOP signal.
+.IP "-u userid"
+Specify the userid to act on.
+.SH AUTHOR(S)
+.B Alexis Megas

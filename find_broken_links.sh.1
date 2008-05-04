@@ -1,0 +1,16 @@
+.TH find_broken_links.sh 1 "March 18, 2007"
+.SH NAME
+find_broken_links.sh
+.SH SYNOPSIS
+.B find_broken_links.sh [options]
+.SH DESCRIPTION
+.B find_broken_links.sh
+is a simple script that locates broken symbolic links. It uses stat -L to
+verify the symbolic links. If stat -L is unavailable, it will use ls -L.
+.SH OPTIONS
+.IP "-d DIR"
+Specify which directory to act on.
+.IP "-r"
+If specified, the broken link is removed.
+.SH AUTHOR(S)
+.B Alexis Megas
