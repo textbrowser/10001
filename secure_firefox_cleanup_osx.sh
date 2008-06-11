@@ -1,6 +1,8 @@
 #!/bin/sh
 # Alexis Megas, 08/21/2007. New script.
 # A simple script that removes private Firefox files.
+# Alexis Megas, 06/11/2008. Update.
+# Updated the list variable.
 
 cd ~
 
@@ -12,7 +14,7 @@ fi
 
 srm -frvz ./Library/Caches/Firefox
 
-list="Cache.Trash formhistory.dat downloads.rdf Cache cookies.txt history.dat sessionstore.js urlclassifier2.sqlite blocklist.xml bookmarkbackups"
+list="Cache Cache.Trash formhistory.dat downloads.rdf cookies.sqlite cookies.txt history.dat minidumps places.sqlite places.sqlite-journal sessionstore.js urlclassifier2.sqlite blocklist.xml bookmarkbackups signons3.txt"
 firefox="./Library/Application Support/Firefox"
 
 for file in $list
