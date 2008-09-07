@@ -9,6 +9,7 @@
 # Alexis Megas, 08/21/2007. Added additional files to delete.
 #                           Directing more errors to /dev/null.
 # Alexis Megas, 02/20/2008. Changed SCRIPTS101_DIR to SHUTS_DIR.
+# Alexis Megas, 09/07/2008. Changed urlclassifier2.sqlite to urlclassifier*.sqlite.
 # An interactive script that allows the user to remove Firefox
 # files (cookies.txt, etc.).
 
@@ -20,7 +21,7 @@ command=""
 command_flags=""
 usage="usage: \
 secure_firefox_cleanup.sh -d FIREFOX_DIR -p PROGRAM (bcwipe|rm|srm)"
-list="Cache.Trash formhistory.dat downloads.rdf Cache cookies.txt history.dat sessionstore.js urlclassifier2.sqlite blocklist.xml bookmarkbackups"
+list="Cache.Trash formhistory.dat downloads.rdf Cache cookies.txt history.dat sessionstore.js urlclassifier*.sqlite blocklist.xml bookmarkbackups"
 
 while getopts d:p: options 2> /dev/null
 do

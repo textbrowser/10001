@@ -14,7 +14,7 @@ fi
 
 srm -frvz ./Library/Caches/Firefox
 
-list="Cache Cache.Trash formhistory.dat downloads.rdf cookies.sqlite cookies.txt history.dat minidumps places.sqlite places.sqlite-journal sessionstore.js urlclassifier2.sqlite blocklist.xml bookmarkbackups signons3.txt"
+list="Cache Cache.Trash formhistory.dat downloads.rdf cookies.sqlite cookies.txt history.dat minidumps places.sqlite places.sqlite-journal sessionstore.js urlclassifier*.sqlite blocklist.xml bookmarkbackups signons3.txt"
 firefox="./Library/Application Support/Firefox"
 
 for file in $list
