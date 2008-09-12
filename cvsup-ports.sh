@@ -1,5 +1,6 @@
 #!/bin/sh
 # Alexis Megas 2006, 2007.
+# Alexis Megas 09/12/2008. Removed absolute paths.
 # Upgrade the FreeBSD ports tree.
 
 myid=`id -u`
@@ -14,7 +15,7 @@ supfile="/usr/local/etc/ports-supfile"
 
 if [ -e "$supfile" ]
 then
-    /usr/local/bin/cvsup -g -L 0 $supfile 1> /dev/null 2> /dev/null
+    cvsup -g -L 0 $supfile 1> /dev/null 2> /dev/null
 else
     echo "The required file $supfile does not exist. Aborting."
     exit 1
@@ -36,7 +37,7 @@ then
     exit 1
 fi
 
-/usr/local/sbin/portsdb -Fu 2> /dev/null
+portsdb -Fu 2> /dev/null
 
 if [ ! $? -eq 0 ]
 then
@@ -46,14 +47,14 @@ fi
 
 # Update the portaudit database, if portaudit exists.
 
-if [ -e /usr/local/sbin/portaudit ]
+if [ -x "`which portaudit 2> /dev/null`" ]
 then
-    /usr/local/sbin/portaudit -F 1> /dev/null 2> /dev/null
+    portaudit -F 1> /dev/null 2> /dev/null
 fi
 
 # Download all of the needed distribution files.
 
-/usr/local/sbin/portupgrade -arF 1> /dev/null 2> /dev/null
+portupgrade -arF 1> /dev/null 2> /dev/null
 
 if [ ! $? -eq 0 ]
 then

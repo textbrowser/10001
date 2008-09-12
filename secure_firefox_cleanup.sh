@@ -9,7 +9,8 @@
 # Alexis Megas, 08/21/2007. Added additional files to delete.
 #                           Directing more errors to /dev/null.
 # Alexis Megas, 02/20/2008. Changed SCRIPTS101_DIR to SHUTS_DIR.
-# Alexis Megas, 09/07/2008. Changed urlclassifier2.sqlite to urlclassifier*.sqlite.
+# Alexis Megas, 09/07/2008. Changed urlclassifier2.sqlite to
+#                           urlclassifier*.sqlite.
 # An interactive script that allows the user to remove Firefox
 # files (cookies.txt, etc.).
 
