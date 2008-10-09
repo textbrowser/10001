@@ -20,6 +20,7 @@ install_shells: $(SHELL_SCRIPTS)
 	cp $(SHELL_SCRIPTS) $(INSTALL_SCRIPTS_PATH)/.
 
 install_manpages: $(MANFILES)
+	mkdir -p $(INSTALL_MANPATH)
 	cp $(MANFILES) $(INSTALL_MANPATH)/.
 
 install: install_shells install_manpages

@@ -12,6 +12,7 @@
 # Alexis Megas, 09/07/2008. Changed urlclassifier2.sqlite to
 #                           urlclassifier*.sqlite.
 # Alexis Megas, 09/24/2008. Added more files.
+# Alexis Megas, 10/08/2008. Support the wipe command.
 # An interactive script that allows the user to remove Firefox
 # files (cookies.txt, etc.).
 
@@ -22,7 +23,7 @@ firefox=""
 command=""
 command_flags=""
 usage="usage: \
-secure_firefox_cleanup.sh -d FIREFOX_DIR -p PROGRAM (bcwipe|rm|srm)"
+secure_firefox_cleanup.sh -d FIREFOX_DIR -p PROGRAM (bcwipe|rm|srm|wipe)"
 list="Cache.Trash formhistory.dat downloads.* Cache cookies.* history.dat places.* sessionstore.js urlclassifier*.* blocklist.xml bookmarkbackups *.sqlite"
 
 while getopts d:p: options 2> /dev/null
@@ -52,6 +53,8 @@ then
 	    ;;
     srm)    command_flags="-frv"
 	    ;;
+    wipe)   command_flags="-fir"
+            ;;
     esac
 
     if [ -z "$command_flags" ]
@@ -167,12 +170,13 @@ while [ ! -x "`which $command 2> /dev/null`" ]
 do
     answer=0
 
-    while [ $answer -ge 4 -o $answer -le 0 ]
+    while [ $answer -ge 5 -o $answer -le 0 ]
     do
         echo "Which removal method would you like to use?"
 	echo "1 - bcwipe"
 	echo "2 - rm"
 	echo "3 - srm"
+	echo "4 - wipe"
 	echo "Answer: \c"
 	read answer
     done
@@ -186,6 +190,9 @@ do
 	;;
 	3) command="srm"
 	command_flags="-frv"
+	;;
+	4) command="wipe"
+	command_flags="-fir"
 	;;
     esac
 
