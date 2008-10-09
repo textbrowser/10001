@@ -53,7 +53,7 @@ then
 	    ;;
     srm)    command_flags="-frv"
 	    ;;
-    wipe)   command_flags="-fir"
+    wipe)   command_flags="-fir -Q 16"
             ;;
     esac
 
@@ -192,7 +192,7 @@ do
 	command_flags="-frv"
 	;;
 	4) command="wipe"
-	command_flags="-fir"
+	command_flags="-fir -Q 16"
 	;;
     esac
 
