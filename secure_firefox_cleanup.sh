@@ -12,7 +12,7 @@
 # Alexis Megas, 09/07/2008. Changed urlclassifier2.sqlite to
 #                           urlclassifier*.sqlite.
 # Alexis Megas, 09/24/2008. Added more files.
-# Alexis Megas, 10/08/2008. Support the wipe command.
+# Alexis Megas, 10/08/2008. The wipe command is now supported.
 # An interactive script that allows the user to remove Firefox
 # files (cookies.txt, etc.).
 
