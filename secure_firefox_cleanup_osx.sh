@@ -2,6 +2,7 @@
 # Alexis Megas, 08/21/2007. A simple script that removes private Firefox files.
 # Alexis Megas, 06/11/2008. Updated the list variable.
 # Alexis Megas, 09/24/2008. Added new files.
+# Alexis Megas, 10/24/2008. Changed sessionstore.js to sessionstore.*.
 
 cd ~
 
@@ -13,7 +14,7 @@ fi
 
 srm -frvz ./Library/Caches/Firefox
 
-list="Cache Cache.Trash formhistory.dat downloads.rdf cookies.* history.dat minidumps places.* sessionstore.js urlclassifier*.* blocklist.xml bookmarkbackups signons3.txt *.sqlite"
+list="Cache Cache.Trash formhistory.dat downloads.rdf cookies.* history.dat minidumps places.* sessionstore.* urlclassifier*.* blocklist.xml bookmarkbackups signons3.txt *.sqlite"
 firefox="./Library/Application Support/Firefox"
 
 for file in $list

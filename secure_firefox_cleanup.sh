@@ -13,6 +13,7 @@
 #                           urlclassifier*.sqlite.
 # Alexis Megas, 09/24/2008. Added more files.
 # Alexis Megas, 10/08/2008. The wipe command is now supported.
+# Alexis Megas, 10/24/2008. Changed sessionstore.js to sessionstore.*.
 # An interactive script that allows the user to remove Firefox
 # files (cookies.txt, etc.).
 
@@ -24,7 +25,8 @@ command=""
 command_flags=""
 usage="usage: \
 secure_firefox_cleanup.sh -d FIREFOX_DIR -p PROGRAM (bcwipe|rm|srm|wipe)"
-list="Cache.Trash formhistory.dat downloads.* Cache cookies.* history.dat places.* sessionstore.js urlclassifier*.* blocklist.xml bookmarkbackups *.sqlite"
+list="Cache.Trash formhistory.dat downloads.* Cache cookies.* history.dat places.* 
+sessionstore.* urlclassifier*.* blocklist.xml bookmarkbackups *.sqlite"
 
 while getopts d:p: options 2> /dev/null
 do
