@@ -1,5 +1,5 @@
 #!/bin/sh
-# Alexis Megas, 2005.
+# Alexis Megas, 2005. Initial implementation
 # Alexis Megas, 2006. Also search for the .mozilla directory.
 # Alexis Megas, 02/24/2007. Removed the clear call.
 # Alexis Megas, 06/27/2007. Added the urlclassifier2.sqlite file.
@@ -15,6 +15,7 @@
 # Alexis Megas, 10/08/2008. The wipe command is now supported.
 # Alexis Megas, 10/24/2008. Changed sessionstore.js to sessionstore.*.
 # Alexis Megas, 04/21/2009. Added search.json and secmod.db.
+# Alexis Megas, 11/04/2010. Fixed empy answer.
 # An interactive script that allows the user to remove Firefox
 # files (cookies.txt, etc.).
 
@@ -181,6 +182,11 @@ do
 	echo "4 - wipe"
 	echo "Answer: \c"
 	read answer
+
+	if [ ! "$answer" ]
+	then
+	    answer=0
+	fi
     done
 
     case "$answer" in
@@ -194,6 +200,9 @@ do
 	command_flags="-frv"
 	;;
 	4) command="wipe"
+	command_flags="-fir -Q 16"
+	;;
+	*) command="wipe"
 	command_flags="-fir -Q 16"
 	;;
     esac
