@@ -17,4 +17,3 @@ echo "Searching... Writing results to $tempfile."
 find / -type f -exec file {} \; 2> /dev/null | \
     grep -i 'core file' 2> /dev/null | awk '{print $1}' 2> /dev/null | sed s/://g > $tempfile 2> /dev/null
 exit 0
-

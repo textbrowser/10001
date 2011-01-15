@@ -4,7 +4,7 @@
 # Alexis Megas, 09/24/2008. Added new files.
 # Alexis Megas, 10/24/2008. Changed sessionstore.js to sessionstore.*.
 
-cd ~
+cd ~ 2> /dev/null
 
 if [ $? -ne 0 ]
 then
@@ -12,7 +12,7 @@ then
     exit 1
 fi
 
-srm -frvz ./Library/Caches/Firefox
+srm -frvz ./Library/Caches/Firefox 2> /dev/null
 
 list="Cache Cache.Trash formhistory.dat downloads.rdf cookies.* history.dat minidumps places.* sessionstore.* urlclassifier*.* blocklist.xml bookmarkbackups signons3.txt *.sqlite"
 firefox="./Library/Application Support/Firefox"
@@ -23,4 +23,3 @@ do
 done
 
 exit 0
-

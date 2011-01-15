@@ -3,7 +3,7 @@
 # Alexis Megas 09/12/2008. Removed absolute paths.
 # Upgrade the FreeBSD ports tree.
 
-myid=`id -u`
+myid=`id -u 2> /dev/null`
 
 if [ ! $myid -eq 0 ]
 then
@@ -80,4 +80,3 @@ else
 fi
 
 exit 0
-
