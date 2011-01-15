@@ -207,7 +207,7 @@ do
 	;;
     esac
 
-    if [ ! -x "`which $command 2>/dev/null`" ]
+    if [ ! -x "`which $command 2> /dev/null`" ]
     then
 	echo "Command $command not found."
     fi
@@ -218,3 +218,6 @@ do
     find "$firefox" -name $file -exec $command $command_flags {} \; 2> \
 	/dev/null
 done
+
+exit 0
+
