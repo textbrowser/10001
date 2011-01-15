@@ -40,6 +40,12 @@ then
     exit 1
 fi
 
+if [ ! -r content.xml ]
+then
+    echo "Unable to read content.xml."
+    exit 1
+fi
+
 sed -e 's/<[^>]*>//g' content.xml > $1.txt 1> /dev/null 2> /dev/null
 
 if [ ! $? -eq 0 ]
@@ -50,4 +56,11 @@ fi
 
 less $1.txt 2> /dev/null
 cp $1.txt $HOME 2> /dev/null
+
+if [ ! $? -eq 0 ]
+then
+    echo "Unable to copy $1.txt to $HOME."
+    exit 1
+fi
+
 exit 0
