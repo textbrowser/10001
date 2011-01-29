@@ -48,7 +48,7 @@ then
 	echo "$usage"
 	exit 1
     fi
-    
+
     case "$command" in
     bcwipe) command_flags="-Ifrv"
 	    ;;
