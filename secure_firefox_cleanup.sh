@@ -16,6 +16,7 @@
 # Alexis Megas, 10/24/2008. Changed sessionstore.js to sessionstore.*.
 # Alexis Megas, 04/21/2009. Added search.json and secmod.db.
 # Alexis Megas, 11/04/2010. Fixed empy answer.
+# Alexis Megas  04/27/2012. Added -q to wipe.
 # An interactive script that allows the user to remove Firefox
 # files (cookies.txt, etc.).
 
@@ -56,7 +57,7 @@ then
 	    ;;
     srm)    command_flags="-frv"
 	    ;;
-    wipe)   command_flags="-fir -Q 16"
+    wipe)   command_flags="-fir -q -Q 16"
             ;;
     esac
 
@@ -200,7 +201,7 @@ do
 	command_flags="-frv"
 	;;
 	4) command="wipe"
-	command_flags="-fir -Q 16"
+	command_flags="-fir -q -Q 16"
 	;;
 	*) command="wipe"
 	command_flags="-fir -Q 16"
