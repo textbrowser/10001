@@ -16,7 +16,8 @@
 # Alexis Megas, 10/24/2008. Changed sessionstore.js to sessionstore.*.
 # Alexis Megas, 04/21/2009. Added search.json and secmod.db.
 # Alexis Megas, 11/04/2010. Fixed empy answer.
-# Alexis Megas  04/27/2012. Added -q to wipe.
+# Alexis Megas, 04/27/2012. Added -q to wipe.
+# Alexis Megas, 02/23/2014. Verify files are readable.
 # An interactive script that allows the user to remove Firefox
 # files (cookies.txt, etc.).
 
@@ -44,7 +45,7 @@ done
 
 if [ $interactive -ne 0 ]
 then
-    if [ -z "$firefox" -o -z "$command" ]
+    if [ -z "$command" -o -z "$firefox" ]
     then
 	echo "$usage"
 	exit 1
@@ -69,7 +70,8 @@ then
 
     for file in $list
     do
-	find "$firefox" -name $file -exec $command $command_flags {} \; 2> /dev/null
+	find "$firefox" -name $file -exec $command $command_flags {} \; \
+	    2> /dev/null
     done
 
     exit 0
@@ -77,10 +79,10 @@ fi
 
 if [ -z "$SHUTS_DIR" ]
 then
-    if [ -f ./functions.sh ]
+    if [ -r ./functions.sh ]
     then
 	. ./functions.sh
-    elif [ -f /usr/local/bin/functions.sh ]
+    elif [ -r /usr/local/bin/functions.sh ]
     then
 	. /usr/local/bin/functions.sh
     else
@@ -88,7 +90,7 @@ then
 	exit 1
     fi
 else
-    if [ -f $SHUTS_DIR/functions.sh ]
+    if [ -r $SHUTS_DIR/functions.sh ]
     then
 	. $SHUTS_DIR/functions.sh
     else
@@ -117,12 +119,12 @@ if [ -z "$homedir" ]
 then
     echo "Unable to determine your home directory."
 
-    while [ ! -d "$homedir" ]
+    while [ ! -d "$homedir" -o ! -r "$homedir" -o ! -x "$homedir" ]
     do
 	echo "Please enter your home directory: \c"
 	read homedir
 
-	if [ ! -d "$homedir" ]
+	if [ ! -d "$homedir" -o ! -r "$homedir" -o ! -x "$homedir" ]
 	then
 	    echo "The directory $homedir does not exist."
 	fi
@@ -136,17 +138,17 @@ echo "Searching for Firefox directories..."
 for name in `find $homedir \( -name "*[F|f][I|i][R|r][E|e][F|f][O|o][X|x]*" -o -name "\.[M|m][O|o][Z|z][I|i][L|l][L|l][A|a]" \) -type d 2> /dev/null`
 do
     echo "$name"
-    echo "(S)elect, (n)ext, or (q)uit: \c"
+    echo "(n)ext, (q)uit, (s)elect: \c"
     read answer
 
-    while [ "$answer" != "n" -a "$answer" != "s" -a "$answer" != "S" -a \
-            "$answer" != "q" ]
+    while [ "$answer" != "n" -a "$answer" != "s" -a "$answer" != "q" -a \
+            "$answer" != "s" ]
     do
-        echo "(S)elect, (n)ext, or (q)uit: \c"
+        echo "(n)ext, (q)uit, or (s)elect: \c"
         read answer
     done
 
-    if [ "$answer" = "s" -o "$answer" = "S" ]
+    if [ "$answer" = "S" -o "$answer" = "s" ]
     then
         firefox=$name
         break
@@ -160,7 +162,7 @@ done
 
 if [ -z "$firefox" ]
 then
-    echo "A Firefox directory was not selected or was not found."
+    echo "A Firefox directory was not found or was not selected."
     exit 1
 else
     echo "You selected $firefox."
@@ -168,9 +170,10 @@ fi
 
 # Determine the removal method.
 
+cmdfile="`which $command 2> /dev/null`"
 command=""
 
-while [ ! -x "`which $command 2> /dev/null`" ]
+while [ ! -r "$cmdfile" -o ! -x "$cmdfile" ]
 do
     answer=0
 
@@ -208,7 +211,9 @@ do
 	;;
     esac
 
-    if [ ! -x "`which $command 2> /dev/null`" ]
+    cmdfile="`which $command 2> /dev/null`"
+
+    if [ ! -r "$cmdfile" -o ! -x "$cmdfile" ]
     then
 	echo "Command $command not found."
     fi
