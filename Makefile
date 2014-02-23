@@ -1,3 +1,6 @@
+INSTALL_MANPATH		= /usr/local/man/man1
+INSTALL_SCRIPTS_PATH	= /usr/local/bin
+
 MANFILES		= nsplit.sh.1 \
 			  cvsup-ports.sh.1 \
 			  find_core_files.sh.1 \
@@ -13,17 +16,15 @@ SHELL_SCRIPTS		= nsplit.sh \
 			  stop_user_processes.sh \
 			  secure_firefox_cleanup.sh \
 			  secure_firefox_cleanup_osx.sh
-INSTALL_MANPATH		= /usr/local/man/man1
-INSTALL_SCRIPTS_PATH	= /usr/local/bin
 
-install_shells: $(SHELL_SCRIPTS)
-	cp $(SHELL_SCRIPTS) $(INSTALL_SCRIPTS_PATH)/.
+install: install_shells install_manpages
 
 install_manpages: $(MANFILES)
 	mkdir -p $(INSTALL_MANPATH)
 	cp $(MANFILES) $(INSTALL_MANPATH)/.
 
-install: install_shells install_manpages
+install_shells: $(SHELL_SCRIPTS)
+	cp $(SHELL_SCRIPTS) $(INSTALL_SCRIPTS_PATH)/.
 
 purge:
 	rm -rf *~
