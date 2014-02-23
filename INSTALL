@@ -2,5 +2,5 @@
 2. Append $SHUTS_DIR to your PATH.
 3. Verify that the scripts reference the correct Bourne Shell (sh) binary.
 4. Modify the Makefile accordingly.
-5. Run sudo make install.
+5. Execute sudo make install.
 6. Verify that the installed scripts have the correct permissions.

@@ -12,10 +12,10 @@ directory=""
 while getopts d:r options 2> /dev/null
 do
     case $options in
-    d) directory="$OPTARG"
-       ;;
-    r) delete=1
-       ;;
+	d) directory="$OPTARG"
+	    ;;
+	r) delete=1
+	    ;;
     esac
 done
 

@@ -11,10 +11,10 @@ usage="usage: nsplit.sh -f FILE -n NumberOfParts (>1)"
 while getopts f:n: options 2> /dev/null
 do
     case $options in
-    f) file="$OPTARG"
-       ;;
-    n) N=$OPTARG
-       ;;
+	f) file="$OPTARG"
+	    ;;
+	n) N=$OPTARG
+	    ;;
     esac
 done
 

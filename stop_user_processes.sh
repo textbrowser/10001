@@ -16,13 +16,13 @@ while getopts cfsu: options 2> /dev/null
 do
     case $options in
 	c) sig="-CONT"
-	   ;;
+	    ;;
 	f) force=1
-	   ;;
+	    ;;
 	s) sig="-STOP"
-	   ;;
+	    ;;
 	u) userid=$OPTARG
-	   ;;
+	    ;;
 	\?) echo "$usage"
 	    exit 1
 	    ;;
@@ -58,7 +58,7 @@ do
 	read answer
 
 	while [ "$answer" != "a" -a "$answer" != "n" -a "$answer" != "q" \
-		-a "$answer" != "y" ]
+	    -a "$answer" != "y" ]
 	do
 	    if [ "$sig" = "-STOP" ]
 	    then

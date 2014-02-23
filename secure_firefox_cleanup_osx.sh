@@ -19,7 +19,7 @@ firefox="./Library/Application Support/Firefox"
 
 for file in $list
 do
-  find "$firefox" -name $file -exec srm -frvz {} \; 2> /dev/null
+    find "$firefox" -name $file -exec srm -frvz {} \; 2> /dev/null
 done
 
 exit 0
