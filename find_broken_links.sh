@@ -3,6 +3,7 @@
 # Alexis Megas, 02/24/2007. Removed the clear call.
 #                           Use stat instead of ls, if it's available.
 # Alexis Megas, 07/04/2007. Direct errors to /dev/null.
+# Alexis Megas, 02/23/2014. Verify that the directory is readable.
 # List all broken links. Delete them if the -r option is provided.
 
 usage="usage: find_broken_links.sh -d DIR [-r(emove)]"
@@ -23,7 +24,8 @@ if [ -z "$directory" ]
 then
     echo "$usage"
     exit 1
-elif [ ! -d "$directory" ]
+elif [ ! -d "$directory" -o ! -r "$directory" -o ! -w "$directory" -o \
+    ! -x "$directory" ]
 then
     echo "Unable to access the directory $directory."
     exit 1

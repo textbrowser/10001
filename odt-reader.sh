@@ -1,13 +1,17 @@
 #!/bin/sh
 # This software was written by matrobriva (http://matrobriva.altervista.org, matrobriva@libero.it).
 
-if [ ! -x "`which less 2> /dev/null`" ]
+lessfile="`which less 2> /dev/null`"
+
+if [ ! -r "$lessfile" -o ! -x "$lessfile" ]
 then
     echo "Unable to locate less."
     exit 1
 fi
 
-if [ ! -x "`which unzip 2> /dev/null`" ]
+unzipfile="`which unzip 2> /dev/null`"
+
+if [ ! -r "$unzipfile" -o ! -x "$unzipfile"  ]
 then
     echo "Unable to locate unzip."
     exit 1
@@ -32,6 +36,13 @@ then
 fi
 
 cd $temp 2> /dev/null
+
+if [ ! $? -eq 0 ]
+then
+    echo "Unable to change directory to $temp."
+    exit 1
+fi
+
 unzip $1 1> /dev/null 2> /dev/null
 
 if [ ! $? -eq 0 ]
@@ -55,6 +66,13 @@ then
 fi
 
 less $1.txt 2> /dev/null
+
+if [ ! $? -eq 0 ]
+then
+    echo "less failure."
+    exit 1
+fi
+
 cp $1.txt $HOME 2> /dev/null
 
 if [ ! $? -eq 0 ]

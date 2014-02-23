@@ -2,6 +2,7 @@
 # Alexis Megas, 2005.
 # Alexis Megas, 02/24/2007. Removed the clear call.
 # Alexis Megas, 07/04/2007. Direct errors to /dev/null.
+# Alexis Megas, 02/23/2014. The provided file must be readable.
 # Split a file into at least n parts.
 
 N=1
@@ -22,9 +23,9 @@ if [ $N -le 1 -o -z "$file" ]
 then
     echo "$usage"
     exit 1
-elif [ ! -f "$file" ]
+elif [ ! -r "$file" ]
 then
-    echo "The file $file does not exist."
+    echo "The file $file is not readable."
     exit 1
 fi
 
