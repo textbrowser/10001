@@ -1,7 +1,7 @@
 #!/bin/sh
 # Alexis Megas, 2005.
 # Alexis Megas, 02/24/2007. Removed the clear call.
-#                           Use stat instead of ls, if it's available.
+#                           Use stat instead of ls if it's available.
 # Alexis Megas, 07/04/2007. Direct errors to /dev/null.
 # Alexis Megas, 02/23/2014. Verify that the directory is readable.
 # List all broken links. Delete them if the -r option is provided.
