@@ -15,9 +15,9 @@
 # Alexis Megas, 10/08/2008. The wipe command is now supported.
 # Alexis Megas, 10/24/2008. Changed sessionstore.js to sessionstore.*.
 # Alexis Megas, 04/21/2009. Added search.json and secmod.db.
-# Alexis Megas, 11/04/2010. Fixed empy answer.
+# Alexis Megas, 11/04/2010. Fixed empty answer.
 # Alexis Megas, 04/27/2012. Added -q to wipe.
-# Alexis Megas, 02/23/2014. Verify files are readable.
+# Alexis Megas, 02/23/2014. Verify that files are readable.
 # An interactive script that allows the user to remove Firefox
 # files (cookies.txt, etc.).
 

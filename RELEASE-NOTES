@@ -7,7 +7,7 @@
 1. Added man2pdf.sh and odt-reader.pdf, courtesy of matrobriva.
 2. Added proper exit codes.
 
-1.13 (06/04/2010)
+1.13 (07/04/2010)
 
 1. Updated the secure_firefox_cleanup.sh script.
 
@@ -41,16 +41,16 @@
 
 1. Added an OS X-specific script.
 
-1.06 (06/20/2007)
+1.06 (07/20/2007)
 
 1. Added the FreeBSD-specific script cvsup-ports.sh.
 2. Fixed a problem with secure_firefox_cleanup.sh.
 
-1.05 (06/18/2007)
+1.05 (07/18/2007)
 
 1. Included some information and support for OS X.
 
-1.04 (06/05/2007)
+1.04 (07/05/2007)
 
 1. Redirecting standard error to /dev/null.
 
