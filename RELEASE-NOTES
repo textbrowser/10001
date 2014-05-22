@@ -1,3 +1,8 @@
+1.16 (05/30/2014)
+
+1. Added postgresql_backup.bash.
+2. Corrected the make file.
+
 1.15 (02/23/2014)
 
 1. Validate command results.
