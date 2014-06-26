@@ -10,7 +10,7 @@ then
 fi
 
 $pgdumpallfile "$@" --clean --file=pg_dumpall.$$ --host=localhost \
-    --password 2>/dev/null
+    2>/dev/null
 
 if [ ! $? -eq 0 ]
 then
