@@ -9,7 +9,7 @@ then
     exit 1
 fi
 
-$pgdumpallfile --clean --file pg_dumpall.$$ "$@" 2>/dev/null
+$pgdumpallfile --clean --file=pg_dumpall.$$ "$@" 2>/dev/null
 
 if [ ! $? -eq 0 ]
 then
