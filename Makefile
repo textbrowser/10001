@@ -5,9 +5,10 @@ MANFILES		= cvsup-ports.sh.1 \
 			  find_broken_links.sh.1 \
 			  find_core_files.sh.1 \
 			  nsplit.sh.1 \
+			  postgresql_backup.sh.1 \
 			  secure_firefox_cleanup_osx.sh.1 \
 			  secure_firefox_cleanup.sh.1 \
-			  stop_user_processes.sh.1 \
+			  stop_user_processes.sh.1
 
 SHELL_SCRIPTS		= cvsup-ports.sh \
 			  find_broken_links.sh \
@@ -15,11 +16,11 @@ SHELL_SCRIPTS		= cvsup-ports.sh \
 			  functions.sh \
 			  man2pdf.sh \
 			  nsplit.sh \
+			  postgresql_backup.sh \
 			  odt-reader.sh \
 			  secure_firefox_cleanup_osx.sh \
 			  secure_firefox_cleanup.sh \
-			  stop_user_processes.sh \
-
+			  stop_user_processes.sh
 
 install: install_manpages install_scripts
 

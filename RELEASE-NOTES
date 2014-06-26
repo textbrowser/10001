@@ -1,6 +1,6 @@
-1.16 (07/01/2014)
+1.16 (06/26/2014)
 
-1. Added postgresql_backup.bash.
+1. Added postgresql_backup.sh.
 2. Corrected the make file.
 
 1.15 (02/23/2014)
