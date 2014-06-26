@@ -9,8 +9,8 @@ then
     exit 1
 fi
 
-$pgdumpallfile -W --clean --file=pg_dumpall.$$ -h localhost \
-    "$@" 2>/dev/null
+$pgdumpallfile "$@" --clean --file=pg_dumpall.$$ --host=localhost \
+    --password 2>/dev/null
 
 if [ ! $? -eq 0 ]
 then
