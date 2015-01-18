@@ -2,6 +2,14 @@
 # Alexis Megas, 2015.
 # Recycle swap if there is sufficient physical memory.
 
+myid=`id -u 2> /dev/null`
+
+if [ ! $myid -eq 0 ]
+then
+    echo "You must run recycle_swap.sh as root. Aborting."
+    exit 1
+fi
+
 free="`which free 2> /dev/null`"
 
 if [ ! -x "$free" ]
