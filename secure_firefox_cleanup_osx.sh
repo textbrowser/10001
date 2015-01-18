@@ -8,7 +8,7 @@ cd ~ 2> /dev/null
 
 if [ $? -ne 0 ]
 then
-    echo "Unable to change directory to your home."
+    echo "Unable to change the current working directory to your home directory."
     exit 1
 fi
 

@@ -126,7 +126,7 @@ then
 
 	if [ ! -d "$homedir" -o ! -r "$homedir" -o ! -x "$homedir" ]
 	then
-	    echo "The directory $homedir does not exist."
+	    echo "The directory $homedir cannot be accessed."
 	fi
     done
 fi

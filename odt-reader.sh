@@ -76,7 +76,7 @@ cp $1.txt $HOME 2> /dev/null
 
 if [ ! $? -eq 0 ]
 then
-    echo "Unable to copy $1.txt to $HOME."
+    echo "Unable to copy $1.txt to your home directory."
     exit 1
 fi
 

@@ -19,5 +19,5 @@ fi
 
 rm -f $1.ps
 
-echo "The manual for $1 was converted to a PDF and placed in the current directory."
+echo "The manual for $1 was converted to a PDF file and placed in the current directory."
 exit 0
