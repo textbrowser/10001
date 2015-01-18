@@ -3,7 +3,7 @@
 # Alexis Megas, 02/24/2007. Removed clear call.
 # Alexis Megas, 07/04/2007. Direct errors to /dev/null.
 # A script that allows the superuser to CONTINUE or STOP another
-# user's processes. The script runs in interactive or
+# user's processes. The script executes in interactive or
 # non-interactive modes.
 
 # stop_user_processes.sh [-f] -c -u userid (CONTINUE)

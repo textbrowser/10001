@@ -9,7 +9,7 @@ myid=`id -u 2> /dev/null`
 
 if [ ! $myid -eq 0 ]
 then
-    echo "You must run cvsup-ports.sh as root. Aborting."
+    echo "You must execute cvsup-ports.sh as root. Aborting."
     exit 1
 fi
 
@@ -17,7 +17,7 @@ supfile="/usr/local/etc/ports-supfile"
 
 if [ -r "$supfile" ]
 then
-    echo -n "Running cvsup... "
+    echo -n "Executing cvsup... "
     cvsup -L 0 -g $supfile 1> /dev/null 2> /dev/null
 else
     echo "The required file $supfile does not exist. Aborting."

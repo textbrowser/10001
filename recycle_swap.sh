@@ -6,7 +6,7 @@ myid=`id -u 2> /dev/null`
 
 if [ ! $myid -eq 0 ]
 then
-    echo "You must run recycle_swap.sh as root. Aborting."
+    echo "You must execute recycle_swap.sh as root. Aborting."
     exit 1
 fi
 
