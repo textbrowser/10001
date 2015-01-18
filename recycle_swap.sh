@@ -44,7 +44,7 @@ fi
 
 if [ $used -eq 0 ]
 then
-    echo "Swap is not used."
+    echo "Swap space is not consumed."
     exit 0
 fi
 
