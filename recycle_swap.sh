@@ -26,6 +26,14 @@ then
     exit 1
 fi
 
+freereal="`free | grep -i mem | awk '{print $4}' 2> /dev/null`"
+
+if [ -z "$freereal" ]
+then
+    echo "awk and/or grep error."
+    exit 1
+fi
+
 used="`free | grep -i swap | awk '{print $3}' 2> /dev/null`"
 
 if [ -z "$used" ]
@@ -38,6 +46,14 @@ if [ $used -eq 0 ]
 then
     echo "Swap is not used."
     exit 0
+fi
+
+difference=`expr $freereal - $used`
+
+if [ $difference -le 0 ]
+then
+    echo "Insufficient physical memory."
+    exit 1
 fi
 
 swapoff="$swapoff -a"
