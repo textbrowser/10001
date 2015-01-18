@@ -6,6 +6,7 @@ MANFILES		= cvsup-ports.sh.1 \
 			  find_core_files.sh.1 \
 			  nsplit.sh.1 \
 			  postgresql_backup.sh.1 \
+			  recycle_swap.sh.1 \
 			  secure_firefox_cleanup_osx.sh.1 \
 			  secure_firefox_cleanup.sh.1 \
 			  stop_user_processes.sh.1
