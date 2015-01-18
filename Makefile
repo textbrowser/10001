@@ -18,6 +18,7 @@ SHELL_SCRIPTS		= cvsup-ports.sh \
 			  nsplit.sh \
 			  postgresql_backup.sh \
 			  odt-reader.sh \
+			  recycle_swap.sh \
 			  secure_firefox_cleanup_osx.sh \
 			  secure_firefox_cleanup.sh \
 			  stop_user_processes.sh
