@@ -1,6 +1,6 @@
 #/bin/sh
 # Alexis Megas, 2015.
-# Recycle swap.
+# Recycle swap if there is sufficient physical memory.
 
 free="`which free 2> /dev/null`"
 
