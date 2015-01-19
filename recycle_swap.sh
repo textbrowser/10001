@@ -34,33 +34,79 @@ then
     exit 1
 fi
 
+P=25
+
+while getopts p: options 2> /dev/null
+do
+    case $options in
+	p) P=$OPTARG
+	    ;;
+
+    esac
+done
+
+if [ -z "$P" ]
+then
+    echo "Incorrect percent value."
+    exit 1
+fi
+
+if [ $P -lt 1 -o $P -gt 100 ]
+then
+    echo "The percent must be in the range [1, 100]."
+    exit 1
+fi
+
 freereal="`free | grep -i mem | awk '{print $4}' 2> /dev/null`"
 
 if [ -z "$freereal" ]
 then
-    echo "awk and/or grep error."
+    echo "awk and/or grep error(s)."
     exit 1
 fi
 
-used="`free | grep -i swap | awk '{print $3}' 2> /dev/null`"
+usedswap="`free | grep -i swap | awk '{print $3}' 2> /dev/null`"
 
-if [ -z "$used" ]
+if [ -z "$usedswap" ]
 then
-    echo "awk and/or grep error."
+    echo "awk and/or grep error(s)."
     exit 1
 fi
 
-if [ $used -eq 0 ]
+if [ $usedswap -eq 0 ]
 then
     echo "Swap space is not consumed."
     exit 0
 fi
 
-difference=`expr $freereal - $used`
+difference=`expr $freereal - $usedswap`
 
 if [ $difference -le 0 ]
 then
     echo "Insufficient physical memory."
+    exit 1
+fi
+
+totalreal="`free | grep -i mem | awk '{print $2}' 2> /dev/null`"
+
+if [ -z "$totalreal" ]
+then
+    echo "awk and/or grep error(s)."
+    exit 1
+fi
+
+if [ $totalreal -le 0 ]
+then
+    echo "Unable to determine the total amount of physical memory."
+    exit 1
+fi
+
+percent=`expr 100 \* \( $freereal - $usedswap \) / $totalreal`
+
+if [ $P -lt $percent ]
+then
+    echo "Insufficient physical memory: computed percentage is $percent, " \
+	"while P is $P."
     exit 1
 fi
 
