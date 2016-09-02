@@ -14,9 +14,9 @@ while getopts d:r options 2> /dev/null
 do
     case $options in
 	d) directory="$OPTARG"
-	    ;;
+	   ;;
 	r) delete=1
-	    ;;
+	   ;;
     esac
 done
 
@@ -25,7 +25,7 @@ then
     echo "$usage"
     exit 1
 elif [ ! -d "$directory" -o ! -r "$directory" -o ! -w "$directory" -o \
-    ! -x "$directory" ]
+       ! -x "$directory" ]
 then
     echo "Unable to access the directory $directory."
     exit 1

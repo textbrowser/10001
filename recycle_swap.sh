@@ -40,7 +40,7 @@ while getopts p: options 2> /dev/null
 do
     case $options in
 	p) P=$OPTARG
-	    ;;
+	   ;;
 
     esac
 done

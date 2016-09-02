@@ -36,10 +36,10 @@ do
     interactive=1
 
     case $options in
-    d) firefox="$OPTARG"
-       ;;
-    p) command="$OPTARG"
-       ;;
+	d) firefox="$OPTARG"
+	   ;;
+	p) command="$OPTARG"
+	   ;;
     esac
 done
 
@@ -52,14 +52,14 @@ then
     fi
 
     case "$command" in
-    bcwipe) command_flags="-Ifrv"
-	    ;;
-    rm)     command_flags="-frv"
-	    ;;
-    srm)    command_flags="-frv"
-	    ;;
-    wipe)   command_flags="-fir -q -Q 16"
-            ;;
+	bcwipe) command_flags="-Ifrv"
+		;;
+	rm)     command_flags="-frv"
+		;;
+	srm)    command_flags="-frv"
+		;;
+	wipe)   command_flags="-fir -q -Q 16"
+		;;
     esac
 
     if [ -z "$command_flags" ]
@@ -71,7 +71,7 @@ then
     for file in $list
     do
 	find "$firefox" -name $file -exec $command $command_flags {} \; \
-	    2> /dev/null
+	     2> /dev/null
     done
 
     exit 0
@@ -195,20 +195,20 @@ do
 
     case "$answer" in
 	1) command="bcwipe"
-	command_flags="-Irv"
-	;;
+	   command_flags="-Irv"
+	   ;;
 	2) command="rm"
-	command_flags="-frv"
-	;;
+	   command_flags="-frv"
+	   ;;
 	3) command="srm"
-	command_flags="-frv"
-	;;
+	   command_flags="-frv"
+	   ;;
 	4) command="wipe"
-	command_flags="-fir -q -Q 16"
-	;;
+	   command_flags="-fir -q -Q 16"
+	   ;;
 	*) command="wipe"
-	command_flags="-fir -Q 16"
-	;;
+	   command_flags="-fir -Q 16"
+	   ;;
     esac
 
     cmdfile="`which $command 2> /dev/null`"
@@ -222,7 +222,7 @@ done
 for file in $list
 do
     find "$firefox" -name $file -exec $command $command_flags {} \; 2> \
-	/dev/null
+	 /dev/null
 done
 
 exit 0
