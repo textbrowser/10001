@@ -106,7 +106,7 @@ percent=`expr 100 \* \( $freereal - $usedswap \) / $totalreal`
 if [ $P -lt $percent ]
 then
     echo "Insufficient physical memory: computed percentage is $percent, " \
-	"while P is $P."
+	 "while P is $P."
     exit 1
 fi
 
