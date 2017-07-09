@@ -5,7 +5,7 @@
 # All rights reserved
 #
 # Redistribution and use in source and binary forms, with or without
-# modification, are permitted providing that the following conditions 
+# modification, are permitted providing that the following conditions
 # are met:
 # 1. Redistributions of source code must retain the above copyright
 #    notice, this list of conditions and the following disclaimer.
@@ -26,6 +26,8 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 # $FreeBSD: releng/10.2/usr.sbin/freebsd-update/freebsd-update.sh 284940 2015-06-29 19:09:16Z delphij $
+
+# Alexis Megas: new clean command.
 
 #### Usage function -- called from command-line handling code.
 
@@ -2520,7 +2522,7 @@ upgrade_run () {
 	while ! fetch_key; do
 		fetch_pick_server || return 1
 	done
- 
+
 	# Try to fetch the metadata index signature ("tag") until we run
 	# out of available servers; and sanity check the downloaded tag.
 	while ! fetch_tag; do
@@ -3207,7 +3209,7 @@ IDS_run () {
 	while ! fetch_key; do
 		fetch_pick_server || return 1
 	done
- 
+
 	# Try to fetch the metadata index signature ("tag") until we run
 	# out of available servers; and sanity check the downloaded tag.
 	while ! fetch_tag; do
