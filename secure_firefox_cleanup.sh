@@ -77,7 +77,7 @@ then
     exit 0
 fi
 
-if [ -z "$SHUTS_DIR" ]
+if [ -z "$TENTHOUSANDONE_DIR" ]
 then
     if [ -r ./functions.sh ]
     then
@@ -90,11 +90,11 @@ then
 	exit 1
     fi
 else
-    if [ -r $SHUTS_DIR/functions.sh ]
+    if [ -r $TENTHOUSANDONE_DIR/functions.sh ]
     then
-	. $SHUTS_DIR/functions.sh
+	. $TENTHOUSANDONE_DIR/functions.sh
     else
-	echo "$SHUTS_DIR/functions.sh was not found."
+	echo "$TENTHOUSANDONE_DIR/functions.sh was not found."
 	exit 1
     fi
 fi

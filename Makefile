@@ -1,5 +1,5 @@
-INSTALL_MANUALS_PATH	= /usr/share/man/man1
-INSTALL_SCRIPTS_PATH	= /usr/local/bin
+INSTALL_MANUALS_PATH	= /usr/share/man/man1/10001
+INSTALL_SCRIPTS_PATH	= /usr/local/bin/10001
 
 MANUALS		= cvsup-ports.sh.1 \
 		  find_broken_links.sh.1 \
