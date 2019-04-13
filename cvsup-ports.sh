@@ -1,8 +1,8 @@
 #!/bin/sh
-# Alexis Megas 2006, 2007.
-# Alexis Megas 09/12/2008. Removed absolute paths.
-# Alexis Megas 02/23/2014. Verify that /usr/local/etc/ports-supfile
-#                          has read permissions.
+# Alexis Megas, 2006, 2007.
+# Alexis Megas, 09/12/2008. Removed absolute paths.
+# Alexis Megas, 02/23/2014. Verify that /usr/local/etc/ports-supfile
+#                           has read permissions.
 # Upgrade the FreeBSD ports tree.
 
 myid=`id -u 2> /dev/null`

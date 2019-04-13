@@ -1,5 +1,5 @@
 #!/bin/sh
-# Alexis Megas 2014.
+# Alexis Megas, 2014.
 
 pgdumpallfile="`which pg_dumpall 2> /dev/null`"
 
