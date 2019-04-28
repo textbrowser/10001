@@ -1,108 +1,108 @@
-1.18 (07/09/2017)
+07.09.2017
 
 1. Added freebsd-update.sh.
 
-1.17 (01/18/2015)
+01.18.2015
 
 1. Added recycle_swap.sh.
 
-1.16 (06/26/2014)
+06.26.2014
 
 1. Added postgresql_backup.sh.
 2. Corrected the make file.
 
-1.15 (02/23/2014)
+02.23.2014
 
 1. Validate command results.
 
-1.14 (01/15/2011)
+01.15.2011
 
 1. Added man2pdf.sh and odt-reader.pdf, courtesy of matrobriva.
 2. Added proper exit codes.
 
-1.13 (07/04/2010)
+07.04.2010
 
 1. Updated the secure_firefox_cleanup.sh script.
 
-1.12 (03/13/2009)
+03.13.2009
 
 1. Removed the backup.csh script.
 2. The cvsup-ports.sh script shall now provide more detailed status
    information.
 
-1.11 (10/19/2008)
+10.19.2008
 
 1. The Makefile's install_manpages target now creates the required
    destination directories.
 2. Updated secure_firefox_cleanup.sh in support of the wipe command.
 
-1.10 (09/28/2008)
+09.28.2008
 
 1. Modified the secure_firefox_cleanup scripts.
 
-1.09 (09/12/2008)
+09.12.2008
 
 1. Removed absolute paths from the cvsup-ports.sh script.
 2. Updated the secure_firefox_cleanup*.sh scripts.
 
-1.08 (02/29/2008)
+02.29.2008
 
 1. Changed SCRIPTS101_DIR to SHUTS_DIR.
 2. Other miscellaneous changes.
 
-1.07 (09/01/2007)
+09.01.2007
 
 1. Added an OS X-specific script.
 
-1.06 (07/20/2007)
+07.20.2007
 
 1. Added the FreeBSD-specific script cvsup-ports.sh.
 2. Fixed a problem with secure_firefox_cleanup.sh.
 
-1.05 (07/18/2007)
+07.18.2007
 
 1. Included some information and support for OS X.
 
-1.04 (07/05/2007)
+07.05.2007
 
 1. Redirecting standard error to /dev/null.
 
-1.03 (05/27/2007)
+05.27.2007
 
 1. Updated secure_firefox_cleanup.sh.
 
-1.02 (03/18/2007)
+03.18.2007
 
 1. Updated secure_firefox_cleanup.sh.
 2. Updated the manual pages.
 
-1.01 (02/27/2007)
+02.27.2007
 
 1. Some minor fixes in support of Solaris.
 2. The Makefile has also been updated.
 3. Version remains at 1.01.
 
-1.01 (02/24/2007)
+02.24.2007
 
 1. Created Makefile.
 2. Created manual pages for each of the shell scripts.
 
-1.00 (09/26/2006)
+09.26.2006
 
 1. Minor updates.
 2. Version remains at 1.00.
 
-0.00 (12/17/2005)
+12.17.2005
 
 1. Updated find_core_files.sh.
 2. Version remains at 0.00.
 
-0.00 (12/03/2005)
+12.03.2005
 
 1. Added nsplit.sh.
 2. Corrected usage information for find_broken_links.sh.
 3. Version remains at 0.00.
 
-0.00 (12/01/2005)
+12.01.2005
 
 1. Initial release.
