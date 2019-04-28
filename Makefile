@@ -4,6 +4,7 @@ INSTALL_SCRIPTS_PATH	= /usr/local/bin/10001
 MANUALS		= cvsup-ports.sh.1 \
 		  find_broken_links.sh.1 \
 		  find_core_files.sh.1 \
+		  maestro-debian.bash.1 \
 		  nsplit.sh.1 \
 		  postgresql_backup.sh.1 \
 		  recycle_swap.sh.1 \
@@ -16,6 +17,7 @@ SHELL_SCRIPTS	= cvsup-ports.sh \
 		  find_core_files.sh \
 		  freebsd-update.sh \
 		  functions.sh \
+		  maestro-debian.bash \
 		  man2pdf.sh \
 		  nsplit.sh \
 		  odt-reader.sh \
