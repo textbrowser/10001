@@ -1,6 +1,6 @@
 #!/bin/bash
 # Alexis Megas, 2019.
-# Upgrade a set of Debian machines.
+# Update the packages on a set of Debian machines.
 
 # Please configure sudo on the host machines as follows:
 # user ALL=(root) NOPASSWD: /usr/bin/aptitude update, /usr/bin/aptitude upgrade
