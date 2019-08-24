@@ -3,6 +3,7 @@ INSTALL_SCRIPTS_PATH	= /usr/local/bin/10001
 
 MANUALS		= cvsup_ports.sh.1 \
 		  find_broken_links.sh.1 \
+		  find_consecutive_empty_lines.bash.1 \
 		  find_core_files.sh.1 \
 		  freebsd-update.8 \
 		  maestro_debian.bash.1 \
@@ -15,6 +16,7 @@ MANUALS		= cvsup_ports.sh.1 \
 
 SHELL_SCRIPTS	= cvsup_ports.sh \
 		  find_broken_links.sh \
+		  find_consecutive_empty_lines.bash \
 		  find_core_files.sh \
 		  freebsd-update.sh \
 		  functions.sh \
