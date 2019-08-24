@@ -9,7 +9,7 @@ myid=`id -u 2> /dev/null`
 
 if [ ! $myid -eq 0 ]
 then
-    echo "You must execute cvsup-ports.sh as root. Aborting."
+    echo "You must execute cvsup_ports.sh as root. Aborting."
     exit 1
 fi
 
@@ -77,7 +77,7 @@ portupgrade -Far 1> /dev/null 2> /dev/null
 
 if [ ! $? -eq 0 ]
 then
-    echo "cvsup-ports.sh did not complete successfully."
+    echo "cvsup_ports.sh did not complete successfully."
     exit 1
 else
     echo "OK."
