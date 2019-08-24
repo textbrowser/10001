@@ -1,10 +1,11 @@
 INSTALL_MANUALS_PATH	= /usr/share/man/man1/10001
 INSTALL_SCRIPTS_PATH	= /usr/local/bin/10001
 
-MANUALS		= cvsup-ports.sh.1 \
+MANUALS		= cvsup_ports.sh.1 \
 		  find_broken_links.sh.1 \
 		  find_core_files.sh.1 \
-		  maestro-debian.bash.1 \
+		  freebsd-update.8 \
+		  maestro_debian.bash.1 \
 		  nsplit.sh.1 \
 		  postgresql_backup.sh.1 \
 		  recycle_swap.sh.1 \
@@ -12,15 +13,15 @@ MANUALS		= cvsup-ports.sh.1 \
 		  secure_firefox_cleanup.sh.1 \
 		  stop_user_processes.sh.1
 
-SHELL_SCRIPTS	= cvsup-ports.sh \
+SHELL_SCRIPTS	= cvsup_ports.sh \
 		  find_broken_links.sh \
 		  find_core_files.sh \
 		  freebsd-update.sh \
 		  functions.sh \
-		  maestro-debian.bash \
+		  maestro_debian.bash \
 		  man2pdf.sh \
 		  nsplit.sh \
-		  odt-reader.sh \
+		  odt_reader.sh \
 		  postgresql_backup.sh \
 		  recycle_swap.sh \
 		  secure_firefox_cleanup.sh \
