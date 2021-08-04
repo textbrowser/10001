@@ -12,7 +12,8 @@ MANUALS		= cvsup_ports.sh.1 \
 		  recycle_swap.sh.1 \
 		  secure_firefox_cleanup_osx.sh.1 \
 		  secure_firefox_cleanup.sh.1 \
-		  stop_user_processes.sh.1
+		  stop_user_processes.sh.1 \
+		  user_home_directories.bash.1
 
 SHELL_SCRIPTS	= cvsup_ports.sh \
 		  find_broken_links.sh \
