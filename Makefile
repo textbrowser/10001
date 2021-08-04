@@ -42,4 +42,4 @@ install_scripts: $(SHELL_SCRIPTS)
 	install $(SHELL_SCRIPTS) $(INSTALL_SCRIPTS_PATH)
 
 purge:
-	rm -rf *~
+	rm -fr *~
