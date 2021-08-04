@@ -28,7 +28,8 @@ SHELL_SCRIPTS	= cvsup_ports.sh \
 		  recycle_swap.sh \
 		  secure_firefox_cleanup.sh \
 		  secure_firefox_cleanup_osx.sh \
-		  stop_user_processes.sh
+		  stop_user_processes.sh \
+		  user_home_directories.bash
 
 install: install_manuals install_scripts
 
