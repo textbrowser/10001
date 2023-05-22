@@ -25,6 +25,7 @@ SHELL_SCRIPTS	= cvsup_ports.sh \
 		  man2pdf.sh \
 		  nsplit.sh \
 		  odt_reader.sh \
+		  pi-thermal.sh \
 		  postgresql_backup.sh \
 		  recycle_swap.sh \
 		  secure_firefox_cleanup.sh \
