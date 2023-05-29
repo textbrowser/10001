@@ -21,6 +21,7 @@ SHELL_SCRIPTS	= cvsup_ports.sh \
 		  find_core_files.sh \
 		  freebsd-update.sh \
 		  functions.sh \
+		  git-pull-all.sh \
 		  maestro_debian.bash \
 		  man2pdf.sh \
 		  nsplit.sh \
