@@ -7,7 +7,7 @@
 
 for directory in $(find . -name '.git' -type d -exec dirname {} \;)
 do
-    echo "$directory:"
+    echo "Pulling $directory:"
     git -C $directory pull $* 2>/dev/null
 done
 

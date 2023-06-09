@@ -7,7 +7,7 @@
 
 for directory in $(find . -name '.git' -type d -exec dirname {} \;)
 do
-    echo "$directory:"
+    echo "Cleaning $directory:"
     git -C $directory clean -df $* 2>/dev/null
 done
 
