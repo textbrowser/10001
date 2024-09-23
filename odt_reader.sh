@@ -1,5 +1,6 @@
 #!/bin/sh
-# This software was written by matrobriva (http://matrobriva.altervista.org, matrobriva@libero.it).
+# This software was written by matrobriva
+# (http://matrobriva.altervista.org, matrobriva@libero.it).
 
 lessfile="`which less 2> /dev/null`"
 
