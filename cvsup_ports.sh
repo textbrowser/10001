@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # Alexis Megas, 2006, 2007.
 # Alexis Megas, 09/12/2008. Removed absolute paths.
 # Alexis Megas, 02/23/2014. Verify that /usr/local/etc/ports-supfile

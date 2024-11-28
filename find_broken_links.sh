@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # Alexis Megas, 2005.
 # Alexis Megas, 02/24/2007. Removed the clear call.
 #                           Use stat instead of ls if it's available.

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # This software was written by matrobriva
 # (http://matrobriva.altervista.org, matrobriva@libero.it).
 

@@ -1,5 +1,6 @@
-#!/bin/sh
-# man2pdf was written by matrobriva (http://matrobriva.altervista.org, matrobriva@libero.it).
+#!/usr/bin/env sh
+# man2pdf was written by matrobriva
+# (http://matrobriva.altervista.org, matrobriva@libero.it).
 
 ps2pdffile="`which ps2pdf 2> /dev/null`"
 
@@ -19,5 +20,6 @@ fi
 
 rm -f $1.ps
 
-echo "The manual for $1 was converted to a PDF file and placed in the current directory."
+echo "The manual for $1 was converted to a PDF file and placed " \
+     "in the current directory."
 exit 0

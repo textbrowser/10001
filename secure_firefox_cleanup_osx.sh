@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # Alexis Megas, 08/21/2007. A simple script that removes private Firefox files.
 # Alexis Megas, 06/11/2008. Updated the list variable.
 # Alexis Megas, 09/24/2008. Added new files.

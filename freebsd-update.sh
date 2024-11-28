@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-#-
+#
 # Copyright 2004-2007 Colin Percival
 # All rights reserved
 #
@@ -25,7 +25,8 @@
 # IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-# $FreeBSD: releng/10.2/usr.sbin/freebsd-update/freebsd-update.sh 284940 2015-06-29 19:09:16Z delphij $
+# $FreeBSD: releng/10.2/usr.sbin/freebsd-update/freebsd-update.sh
+# 284940 2015-06-29 19:09:16Z delphij $
 
 # Alexis Megas: new clean command.
 

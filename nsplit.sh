@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # Alexis Megas, 2005.
 # Alexis Megas, 02/24/2007. Removed the clear call.
 # Alexis Megas, 07/04/2007. Direct errors to /dev/null.

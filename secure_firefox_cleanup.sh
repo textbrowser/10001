@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # Alexis Megas, 2005. Initial implementation.
 # Alexis Megas, 2006. Also search for the .mozilla directory.
 # Alexis Megas, 02/24/2007. Removed the clear call.

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # Alexis Megas, 2015.
 # Recycle swap if there is sufficient physical memory.
 
