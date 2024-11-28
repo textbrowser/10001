@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Alexis Megas, 2019.
 # Update the packages on a set of Debian machines.
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Alexis Megas, 2019.
 
 for file in "$@"

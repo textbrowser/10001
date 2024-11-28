@@ -1,5 +1,4 @@
-#!/usr/bin/bash
-
+#!/usr/bin/env bash
 # Alexis Megas.
 # Discover accounts and their respective home directories.
 
