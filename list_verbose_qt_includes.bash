@@ -3,7 +3,7 @@
 
 clear
 
-for i in $(find ${1} -iname '*.cc' 2>/dev/null)
+for i in $(find ${1} -iname '*.cc' -or -iname '*.h' 2>/dev/null)
 do
     found=0
 
