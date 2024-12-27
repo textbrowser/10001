@@ -29,16 +29,18 @@ command=""
 command_flags=""
 usage="usage: \
 secure_firefox_cleanup.sh -d FIREFOX_DIR -p PROGRAM (bcwipe|rm|srm|wipe)"
-list="Cache.Trash formhistory.dat downloads.* Cache cookies.* history.dat places.* secmod.db search.json sessionstore.* urlclassifier*.* blocklist.xml bookmarkbackups *.sqlite"
+list="*.sqlite Cache cookies.* Cache.Trash blocklist.xml bookmarkbackups \
+downloads.* formhistory.dat history.dat places.* search.json secmod.db \
+sessionstore.* urlclassifier*.*"
 
 while getopts d:p: options 2> /dev/null
 do
     interactive=1
 
     case $options in
-	d) firefox="$OPTARG"
-	   ;;
 	p) command="$OPTARG"
+	   ;;
+	d) firefox="$OPTARG"
 	   ;;
     esac
 done
