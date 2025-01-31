@@ -41,7 +41,6 @@ do
     case $options in
 	p) P=$OPTARG
 	   ;;
-
     esac
 done
 
@@ -111,6 +110,7 @@ then
 fi
 
 swapoff="$swapoff -a"
+
 $swapoff
 
 if [ ! $? -eq 0 ]
@@ -120,6 +120,7 @@ then
 fi
 
 swapon="$swapon -a"
+
 $swapon
 
 if [ ! $? -eq 0 ]

@@ -19,6 +19,7 @@ then
 fi
 
 temp="/tmp/digilinux/odtreader"
+
 mkdir -p $temp 2> /dev/null
 
 if [ ! $? -eq 0 ]

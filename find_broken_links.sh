@@ -43,11 +43,12 @@ fi
 find $directory -type l 2> /dev/null | while read line
 do
     $command $line 1> /dev/null 2> /dev/null
+
     rc=$?
 
     if [ ! $rc -eq 0 -a $delete -eq 1 ]
     then
-	rm $line 2> /dev/null
+	rm -f $line 2> /dev/null
 
 	if [ $? -eq 0 ]
 	then
