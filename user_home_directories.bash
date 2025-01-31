@@ -7,9 +7,9 @@ do
     e=$(getent passwd $u | rev | cut -d':' -f1 | rev)
     h=$(getent passwd $u | cut -d':' -f6)
 
-    if [ "$e" == "/bin/false" ] ||
-       [ "$e" == "/sbin/nologin" ] ||
-       [ "$e" == "/usr/sbin/nologin" ] ||
+    if [ "$e" = "/bin/false" ] ||
+       [ "$e" = "/sbin/nologin" ] ||
+       [ "$e" = "/usr/sbin/nologin" ] ||
        [ -z "$e" ]
     then
 	echo $u:/nonexistent
@@ -22,7 +22,8 @@ exit 0
 
 # Using a temporary file.
 
-tmp=/tmp/accounts.$(date +'%Y%m%d%H%S').txt
+tmp="/tmp/accounts.$(date +'%Y%m%d%H%S').txt"
+
 getent passwd | sort | awk 'BEGIN {FS=":"} ; {print $1}' > $tmp
 
 while read -r u
@@ -30,9 +31,9 @@ do
     e=$(getent passwd $u | rev | cut -d':' -f1 | rev)
     h=$(getent passwd $u | cut -d':' -f6)
 
-    if [ "$e" == "/bin/false" ] ||
-       [ "$e" == "/sbin/nologin" ] ||
-       [ "$e" == "/usr/sbin/nologin" ] ||
+    if [ "$e" = "/bin/false" ] ||
+       [ "$e" = "/sbin/nologin" ] ||
+       [ "$e" = "/usr/sbin/nologin" ] ||
        [ -z "$e" ]
     then
 	echo $u:/nonexistent
