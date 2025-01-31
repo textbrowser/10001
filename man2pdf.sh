@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
-# man2pdf was written by matrobriva
+# The script man2pdf was written by matrobriva
 # (http://matrobriva.altervista.org, matrobriva@libero.it).
 
-ps2pdffile="`which ps2pdf 2> /dev/null`"
+ps2pdffile="$(which ps2pdf 2> /dev/null)"
 
 if [ ! -r "$ps2pdffile" -o ! -x "$ps2pdffile" ]
 then

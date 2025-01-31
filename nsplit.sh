@@ -29,8 +29,8 @@ then
     exit 1
 fi
 
-size=`ls -l $file 2> /dev/null | awk '{print $5}' 2> /dev/null`
-size=`expr $size / $N 2> /dev/null`
+size=$(ls -l $file 2> /dev/null | awk '{print $5}' 2> /dev/null)
+size=$(expr $size / $N 2> /dev/null)
 
 if [ $size -le 0 ]
 then

@@ -37,9 +37,9 @@ fi
 
 answer=""
 
-for pid in `ps -U $userid -o pid 2> /dev/null | tail +2 2> /dev/null`
+for pid in $(ps -U $userid -o pid 2> /dev/null | tail +2 2> /dev/null)
 do
-    name="`ps -U $userid -o pid,comm 2> /dev/null | grep \" $pid \" 2> /dev/null | awk '{print $2}' 2> /dev/null`"
+    name="$(ps -U $userid -o pid,comm 2> /dev/null | grep \" $pid \" 2> /dev/null | awk '{print $2}' 2> /dev/null)"
 
     if [ -z "$name" ]
     then

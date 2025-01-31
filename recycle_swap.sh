@@ -2,7 +2,7 @@
 # Alexis Megas, 2015.
 # Recycle swap if there is sufficient physical memory.
 
-myid=`id -u 2> /dev/null`
+myid=$(id -u 2> /dev/null)
 
 if [ ! $myid -eq 0 ]
 then
@@ -10,7 +10,7 @@ then
     exit 1
 fi
 
-free="`which free 2> /dev/null`"
+free="$(which free 2> /dev/null)"
 
 if [ ! -x "$free" ]
 then
@@ -18,7 +18,7 @@ then
     exit 1
 fi
 
-swapoff="`which swapoff 2> /dev/null`"
+swapoff="$(which swapoff 2> /dev/null)"
 
 if [ ! -x "$swapoff" ]
 then
@@ -26,7 +26,7 @@ then
     exit 1
 fi
 
-swapon="`which swapon 2> /dev/null`"
+swapon="$(which swapon 2> /dev/null)"
 
 if [ ! -x "$swapon" ]
 then
@@ -57,7 +57,7 @@ then
     exit 1
 fi
 
-freereal="`free | grep -i mem | awk '{print $4}' 2> /dev/null`"
+freereal="$(free | grep -i mem | awk '{print $4}' 2> /dev/null)"
 
 if [ -z "$freereal" ]
 then
@@ -65,7 +65,7 @@ then
     exit 1
 fi
 
-usedswap="`free | grep -i swap | awk '{print $3}' 2> /dev/null`"
+usedswap="$(free | grep -i swap | awk '{print $3}' 2> /dev/null)"
 
 if [ -z "$usedswap" ]
 then
@@ -79,7 +79,7 @@ then
     exit 0
 fi
 
-difference=`expr $freereal - $usedswap`
+difference=$(expr $freereal - $usedswap)
 
 if [ $difference -le 0 ]
 then
@@ -87,7 +87,7 @@ then
     exit 1
 fi
 
-totalreal="`free | grep -i mem | awk '{print $2}' 2> /dev/null`"
+totalreal="$(free | grep -i mem | awk '{print $2}' 2> /dev/null)"
 
 if [ -z "$totalreal" ]
 then
@@ -101,7 +101,7 @@ then
     exit 1
 fi
 
-percent=`expr 100 \* \( $freereal - $usedswap \) / $totalreal`
+percent=$(expr 100 \* \( $freereal - $usedswap \) / $totalreal)
 
 if [ $P -lt $percent ]
 then

@@ -5,8 +5,9 @@
 # Alexis Megas, 02/23/2014. Exit with the results of the find command.
 # Find all core files and write the results to a file in /tmp.
 
-tempfile="`mktemp /tmp/corefiles.$$.XXXXXX 2> /dev/null`"
-trap 'echo "Killed."; echo "Removing $tempfile."; rm $tempfile 2> /dev/null; exit 1' INT
+tempfile="$(mktemp /tmp/corefiles.$$.XXXXXX 2> /dev/null)"
+
+trap 'echo "Killed." ; echo "Removing $tempfile." ; rm $tempfile 2> /dev/null ; exit 1' INT
 
 if [ ! -e "$tempfile" ]
 then
@@ -15,6 +16,10 @@ then
 fi
 
 echo "Searching... Writing results to $tempfile."
+
 find / -type f -exec file {} \; 2> /dev/null | \
-    grep -i 'core file' 2> /dev/null | awk '{print $1}' 2> /dev/null | sed s/://g > $tempfile 2> /dev/null
+    grep -i 'core file' 2> /dev/null | \
+    awk '{print $1}' 2> /dev/null | \
+    sed s/://g > $tempfile 2> /dev/null
+
 exit $?

@@ -2,7 +2,7 @@
 # This software was written by matrobriva
 # (http://matrobriva.altervista.org, matrobriva@libero.it).
 
-lessfile="`which less 2> /dev/null`"
+lessfile="$(which less 2> /dev/null)"
 
 if [ ! -r "$lessfile" -o ! -x "$lessfile" ]
 then
@@ -10,7 +10,7 @@ then
     exit 1
 fi
 
-unzipfile="`which unzip 2> /dev/null`"
+unzipfile="$(which unzip 2> /dev/null)"
 
 if [ ! -r "$unzipfile" -o ! -x "$unzipfile"  ]
 then
