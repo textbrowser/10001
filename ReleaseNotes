@@ -1,3 +1,9 @@
+01.31.2025
+
+1. Inspect existence of vcgencmd in pi-thermal.sh.
+2. Removed obsolete cvsup_ports.sh and cvsup_ports.sh.1.
+3. Removed obsolete freebsd-update.8 and freebsd-update.sh.
+
 11.30.2024
 
 1. New list_verbose_qt_includes.bash.

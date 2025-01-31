@@ -14,8 +14,10 @@ do
     do
 	line=$line-1
 
-	if [ $line -eq $previous ]; then
-	    if [ $found -eq 0 ]; then
+	if [ $line -eq $previous ]
+	then
+	    if [ $found -eq 0 ]
+	    then
 		echo $file
 		found=1
 	    fi
