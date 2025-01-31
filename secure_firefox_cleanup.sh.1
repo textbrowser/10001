@@ -5,8 +5,11 @@ secure_firefox_cleanup.sh
 .B secure_firefox_cleanup.sh [options]
 .SH DESCRIPTION
 .B secure_firefox_cleanup.sh
-is a script that securely deletes certain files in the Firefox directory. The files marked for deletetion are: Cache,
-Cache.Trash, blocklist.xml, bookmarkbackups, cookies.*, downloads.*, formhistory.dat, history.dat, places.*, sessionstore.*, search.json, secmod.db, urlclassifier*.*, and *.sqlite.
+is a script that securely deletes certain files in the Firefox directory.
+The files marked for deletetion are: Cache,
+Cache.Trash, blocklist.xml, bookmarkbackups, cookies.*, downloads.*,
+formhistory.dat, history.dat, places.*, sessionstore.*, search.json,
+secmod.db, urlclassifier*.*, and *.sqlite.
 The script supports both interactive and non-interactive modes.
 .SH OPTIONS
 .IP "-d FIREFOX_DIR"
@@ -16,6 +19,8 @@ Specify which program to use for file removal.
 .SH FILES
 functions.sh
 .SH BUGS
-You may encounter problems running in interactive mode on OS X due to directory names having spaces. Other operating systems may encounter similar problems.
+You may encounter problems running in interactive mode on OS X due to
+directory names having spaces. Other operating systems may encounter
+similar problems.
 .SH AUTHOR(S)
 .B Alexis Megas
