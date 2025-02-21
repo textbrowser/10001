@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+
 # Alexis Megas.
 
 # Discover all git repositories from the current directory and

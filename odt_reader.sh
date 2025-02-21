@@ -1,8 +1,9 @@
 #!/usr/bin/env sh
+
 # This software was written by matrobriva
 # (http://matrobriva.altervista.org, matrobriva@libero.it).
 
-lessfile="$(which less 2> /dev/null)"
+lessfile="$(which less 2>/dev/null)"
 
 if [ ! -r "$lessfile" -o ! -x "$lessfile" ]
 then
@@ -10,9 +11,9 @@ then
     exit 1
 fi
 
-unzipfile="$(which unzip 2> /dev/null)"
+unzipfile="$(which unzip 2>/dev/null)"
 
-if [ ! -r "$unzipfile" -o ! -x "$unzipfile"  ]
+if [ ! -r "$unzipfile" -o ! -x "$unzipfile" ]
 then
     echo "Unable to locate unzip."
     exit 1
@@ -20,7 +21,7 @@ fi
 
 temp="/tmp/digilinux/odtreader"
 
-mkdir -p $temp 2> /dev/null
+mkdir -p $temp 2>/dev/null
 
 if [ ! $? -eq 0 ]
 then
@@ -28,7 +29,7 @@ then
     exit 1
 fi
 
-cp $1 $temp 2> /dev/null
+cp $1 $temp 2>/dev/null
 
 if [ ! $? -eq 0 ]
 then
@@ -36,7 +37,7 @@ then
     exit 1
 fi
 
-cd $temp 2> /dev/null
+cd $temp 2>/dev/null
 
 if [ ! $? -eq 0 ]
 then
@@ -44,7 +45,7 @@ then
     exit 1
 fi
 
-unzip $1 1> /dev/null 2> /dev/null
+unzip $1 1>/dev/null 2>/dev/null
 
 if [ ! $? -eq 0 ]
 then
@@ -58,7 +59,7 @@ then
     exit 1
 fi
 
-sed -e 's/<[^>]*>//g' content.xml > $1.txt 1> /dev/null 2> /dev/null
+sed -e 's/<[^>]*>//g' content.xml > $1.txt 1>/dev/null 2>/dev/null
 
 if [ ! $? -eq 0 ]
 then
@@ -66,7 +67,7 @@ then
     exit 1
 fi
 
-less $1.txt 2> /dev/null
+less $1.txt 2>/dev/null
 
 if [ ! $? -eq 0 ]
 then
@@ -74,7 +75,7 @@ then
     exit 1
 fi
 
-cp $1.txt $HOME 2> /dev/null
+cp $1.txt $HOME 2>/dev/null
 
 if [ ! $? -eq 0 ]
 then

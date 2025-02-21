@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
+
 # Alexis Megas.
+
 # Discover accounts and their respective home directories.
 
 for u in $(getent passwd | sort | awk 'BEGIN {FS=":"} ; {print $1}')
@@ -43,3 +45,4 @@ do
 done < $tmp
 
 rm -f $tmp
+exit 0

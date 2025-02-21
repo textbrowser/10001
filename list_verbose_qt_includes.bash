@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Alexis Megas.
 
 clear
@@ -25,3 +26,5 @@ do
 	fi
     done
 done
+
+exit 0

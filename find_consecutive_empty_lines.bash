@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Alexis Megas, 2019.
 
 for file in "$@"
@@ -29,3 +30,5 @@ do
 	previous=$line+1
     done
 done
+
+exit 0
