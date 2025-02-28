@@ -1,15 +1,16 @@
-.TH recycle_swap.sh 1 "January 18, 2015"
+.TH recycle-swap.sh 1 "February 28, 2025"
 .SH NAME
-recycle_swap.sh
+recycle-swap.sh
 .SH SYNOPSIS
-.B recycle_swap.sh [options]
+.B recycle-swap.sh [options]
 .SH DESCRIPTION
-.B recycle_swap.sh
-is a simple script that recycles swap. It does so by deactivating
+.B recycle-swap.sh
+recycles swap. It does so by deactivating
 swap if the available physical memory is sufficiently large.
 Swap will be reactivated before the script terminates.
 .SH OPTIONS
-.IP "-p percent"
+.TP
+.BI -p " percent"
 Specify a safety percent. If p >= 100 * (Free Physical Memory -
 Consumed Swap) / Total Physical Memory, then the swap area will be
 recycled. If the free physical memory is less than or equal to the
