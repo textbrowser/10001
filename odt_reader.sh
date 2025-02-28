@@ -82,5 +82,3 @@ then
     echo "Unable to copy $1.txt to your home directory."
     exit 1
 fi
-
-exit 0

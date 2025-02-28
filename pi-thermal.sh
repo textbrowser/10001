@@ -16,5 +16,3 @@ while
     sleep 0.25
 do true
 done
-
-exit 0

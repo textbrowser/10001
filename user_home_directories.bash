@@ -45,4 +45,3 @@ do
 done < $tmp
 
 rm -f $tmp
-exit 0

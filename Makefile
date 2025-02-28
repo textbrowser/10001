@@ -1,6 +1,6 @@
 INSTALL_MANUALS_PATH = /usr/share/man/man1/10001
 INSTALL_SCRIPTS_PATH = /usr/local/bin/10001
-MANUALS	      = *.1
+MANUALS	= *.1
 SHELL_SCRIPTS = *.bash *.sh
 
 install: install_manuals install_scripts
@@ -15,4 +15,4 @@ install_scripts: $(SHELL_SCRIPTS)
 	install $(SHELL_SCRIPTS) $(INSTALL_SCRIPTS_PATH)
 
 purge:
-	rm -fr *~
+	rm -f *~

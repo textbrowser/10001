@@ -11,5 +11,3 @@ do
     echo "Cleaning $directory:"
     git -C $directory clean -df $* 2>/dev/null
 done
-
-exit 0

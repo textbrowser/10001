@@ -11,5 +11,3 @@ do
     echo "Pulling $directory:"
     git -C $directory pull $* 2>/dev/null
 done
-
-exit 0

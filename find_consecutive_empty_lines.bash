@@ -30,5 +30,3 @@ do
 	previous=$line+1
     done
 done
-
-exit 0

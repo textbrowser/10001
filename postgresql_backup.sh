@@ -21,5 +21,3 @@ then
     echo "pg_dumpall failed."
     exit 1
 fi
-
-exit 0

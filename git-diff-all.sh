@@ -11,5 +11,3 @@ do
     echo "Pulling $directory:"
     git -C $directory diff $* 2>/dev/null
 done
-
-exit 0

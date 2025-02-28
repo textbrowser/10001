@@ -65,5 +65,3 @@ do
 	echo "$line"
     fi
 done
-
-exit 0

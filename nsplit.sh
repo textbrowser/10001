@@ -15,9 +15,9 @@ while getopts f:n: options 2>/dev/null
 do
     case $options in
 	f) file="$OPTARG"
-	    ;;
+	   ;;
 	n) N=$OPTARG
-	    ;;
+	   ;;
     esac
 done
 
@@ -49,5 +49,3 @@ else
     echo "An error occurred while attempting to split $file."
     exit 1
 fi
-
-exit 0

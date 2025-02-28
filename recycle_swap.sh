@@ -130,5 +130,3 @@ then
     echo "swapon failure."
     exit 1
 fi
-
-exit 0
