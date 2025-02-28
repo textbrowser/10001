@@ -8,6 +8,6 @@
 
 for directory in $(find . -name '.git' -type d -exec dirname {} \;)
 do
-    echo "Pulling $directory:"
+    echo "Discovering differences in $directory."
     git -C $directory diff $* 2>/dev/null
 done
