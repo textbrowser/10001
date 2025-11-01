@@ -24,15 +24,16 @@ then
     exit 1
 fi
 
+rc=0
 site="https://api.github.com/users/$account/repos?per_page=50000"
 
-for i in $(curl --silent $site 2>/dev/null | grep clone_url)
+for i in $(curl --silent "$site" 2>/dev/null | grep clone_url)
 do
-    url=$(echo $i | sed s/,*\"*//g)
+    url="$(echo $i | sed s/,*\"*//g)"
 
     if [ ! -z "$(echo $url | grep https://)" ]
     then
-	name=$(echo $url | rev | cut -d '/' -f 1 | rev 2>/dev/null)
+	name="$(echo $url | rev | cut -d '/' -f 1 | rev 2>/dev/null)"
 
 	if [ -z "$name" ]
 	then
@@ -78,6 +79,10 @@ do
 	    echo "Successfully cloned $url into $directory."
 	else
 	    echo "Error cloning $url into $directory."
+
+	    rc=1
 	fi
     fi
 done
+
+exit $rc
