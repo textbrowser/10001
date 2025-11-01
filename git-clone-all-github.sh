@@ -20,7 +20,7 @@ account="$1"
 
 if [ -z "$account" ]
 then
-    echo "Usage: git-clone-all account."
+    echo "Usage: $0 account."
     exit 1
 fi
 
