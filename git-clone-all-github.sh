@@ -24,7 +24,7 @@ then
     exit 1
 fi
 
-site="https://api.github.com/users/$account/repos"
+site="https://api.github.com/users/$account/repos?per_page=50000"
 
 for i in $(curl --silent $site 2>/dev/null | grep clone_url)
 do
