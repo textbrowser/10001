@@ -17,7 +17,7 @@ do
 	then
 	    if [ $found -eq 0 ]
 	    then
-		echo "Processing file $i... "
+		echo "Processing file $i..."
 
 		found=1
 	    fi
