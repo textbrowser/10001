@@ -9,7 +9,7 @@
 
 N=1
 file=""
-usage="usage: nsplit.sh -f FILE -n NumberOfParts (>1)"
+usage="Usage: $0 -f FILE -n NumberOfParts (>1)."
 
 while getopts f:n: options 2>/dev/null
 do

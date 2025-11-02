@@ -12,7 +12,7 @@
 # stop_user_processes.sh [-f] -s -u userid (STOP)
 
 force=0
-usage="usage: stop_user_processes.sh -c|-s -u USERID [-f(orce)]"
+usage="Usage: $0 -c|-s -u USERID [-f(orce)]."
 
 while getopts cfsu: options 2>/dev/null
 do
