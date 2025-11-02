@@ -1,3 +1,10 @@
+11.02.2025
+
+1. Corrected script names in usage information.
+2. New git-clone-all-github.sh.
+3. Remove empty temporary file in find-core-files.sh.
+4. Safer sudo in maestro-debian.bash.
+
 02.28.2025
 
 1. Install in /opt/10001.
