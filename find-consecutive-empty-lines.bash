@@ -4,6 +4,12 @@
 
 for file in "$@"
 do
+    if [ -d $file ]
+    then
+	echo "Skipping directory '$file'."
+	continue
+    fi
+
     declare -i found
     declare -i line
     declare -i previous

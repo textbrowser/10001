@@ -10,7 +10,7 @@
 
 delete=0
 directory=""
-usage="usage: find_broken_links.sh -d DIR [-r(emove)]"
+usage="Usage: $0 -d DIR [-r(emove)]."
 
 while getopts d:r options 2>/dev/null
 do
