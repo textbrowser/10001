@@ -1,7 +1,8 @@
 11.08.2025
 
 1. Elegance.
-2. git-clone-all-github.sh: deposit cloned repositories into
+2. Enclose file names with quotes.
+3. git-clone-all-github.sh: deposit cloned repositories into
    ./$account.d/tmp.d.
 
 11.02.2025
