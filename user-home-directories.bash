@@ -4,19 +4,19 @@
 
 # Discover accounts and their respective home directories.
 
-for u in $(getent passwd | sort | awk 'BEGIN {FS=":"} ; {print $1}')
+for u in $(getent passwd | sort | awk 'BEGIN {FS=":"} ; {print $1}' 2>/dev/null)
 do
-    e=$(getent passwd $u | rev | cut -d':' -f1 | rev)
-    h=$(getent passwd $u | cut -d':' -f6)
+    e="$(getent passwd $u | rev | cut -d':' -f1 | rev 2>/dev/null)"
+    h="$(getent passwd $u | cut -d':' -f6 2>/dev/null)"
 
     if [ "$e" = "/bin/false" ] ||
        [ "$e" = "/sbin/nologin" ] ||
        [ "$e" = "/usr/sbin/nologin" ] ||
        [ -z "$e" ]
     then
-	echo $u:/nonexistent
+	echo "$u:/nonexistent"
     else
-	echo $u:$h
+	echo "$u:$h"
     fi
 done
 
@@ -30,18 +30,18 @@ getent passwd | sort | awk 'BEGIN {FS=":"} ; {print $1}' > $tmp
 
 while read -r u
 do
-    e=$(getent passwd $u | rev | cut -d':' -f1 | rev)
-    h=$(getent passwd $u | cut -d':' -f6)
+    e="$(getent passwd $u | rev | cut -d':' -f1 | rev 2>/dev/null)"
+    h="$(getent passwd $u | cut -d':' -f6 2>/dev/null)"
 
     if [ "$e" = "/bin/false" ] ||
        [ "$e" = "/sbin/nologin" ] ||
        [ "$e" = "/usr/sbin/nologin" ] ||
        [ -z "$e" ]
     then
-	echo $u:/nonexistent
+	echo "$u:/nonexistent"
     else
-	echo $u:$h
+	echo "$u:$h"
     fi
 done < $tmp
 
-rm -f $tmp
+rm -f "$tmp"

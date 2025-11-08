@@ -2,11 +2,13 @@
 
 # Alexis Megas, 2019.
 
+clear
+
 for file in "$@"
 do
     if [ -d $file ]
     then
-	echo "Skipping directory '$file'."
+	echo "Skipping the directory $file."
 	continue
     fi
 
@@ -17,7 +19,7 @@ do
     found=0
     previous=-1
 
-    for line in $(grep -e '^$' -n $file | sed 's|:||g')
+    for line in $(grep -e '^$' -n $file | sed 's|:||g' 2>/dev/null)
     do
 	line=$line-1
 

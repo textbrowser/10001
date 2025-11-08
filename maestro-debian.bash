@@ -3,13 +3,10 @@
 # Alexis Megas, 2019.
 # Alexis Megas, 2025. Safer sudo.
 
-# Update the packages on a set of Debian machines.
-
-# List of machines along with appropriate accounts.
+# Issue apt-update and apt-upgrade on a set Debian machines.
 
 command1="sudo apt update"
 command2="sudo apt upgrade -y"
-
 declare -a hosts=("192.168.178.45"
 		  "192.168.178.65")
 
