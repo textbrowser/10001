@@ -6,9 +6,9 @@ clear
 
 for file in "$@"
 do
-    if [ -d $file ]
+    if [ -d "$file" ]
     then
-	echo "Skipping the directory $file."
+	echo "Skipping the directory \"$file\"."
 	continue
     fi
 
@@ -19,7 +19,7 @@ do
     found=0
     previous=-1
 
-    for line in $(grep -e '^$' -n $file | sed 's|:||g' 2>/dev/null)
+    for line in $(grep -e '^$' -n "$file" | sed 's|:||g' 2>/dev/null)
     do
 	line=$line-1
 
@@ -27,12 +27,12 @@ do
 	then
 	    if [ $found -eq 0 ]
 	    then
-		echo $file
+		echo "$file"
 
 		found=1
 	    fi
 
-	    echo "line " $line
+	    echo "line:" $line
 	fi
 
 	previous=$line+1

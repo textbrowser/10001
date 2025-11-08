@@ -6,8 +6,8 @@
 
 for u in $(getent passwd | sort | awk 'BEGIN {FS=":"} ; {print $1}' 2>/dev/null)
 do
-    e="$(getent passwd $u | rev | cut -d':' -f1 | rev 2>/dev/null)"
-    h="$(getent passwd $u | cut -d':' -f6 2>/dev/null)"
+    e="$(getent passwd \"$u\" | rev | cut -d':' -f1 | rev 2>/dev/null)"
+    h="$(getent passwd \"$u\" | cut -d':' -f6 2>/dev/null)"
 
     if [ "$e" = "/bin/false" ] ||
        [ "$e" = "/sbin/nologin" ] ||
@@ -26,12 +26,12 @@ exit 0
 
 tmp="/tmp/accounts.$(date +'%Y%m%d%H%S').txt"
 
-getent passwd | sort | awk 'BEGIN {FS=":"} ; {print $1}' > $tmp
+getent passwd | sort | awk 'BEGIN {FS=":"} ; {print $1}' > "$tmp"
 
 while read -r u
 do
-    e="$(getent passwd $u | rev | cut -d':' -f1 | rev 2>/dev/null)"
-    h="$(getent passwd $u | cut -d':' -f6 2>/dev/null)"
+    e="$(getent passwd \"$u\" | rev | cut -d':' -f1 | rev 2>/dev/null)"
+    h="$(getent passwd \"$u\" | cut -d':' -f6 2>/dev/null)"
 
     if [ "$e" = "/bin/false" ] ||
        [ "$e" = "/sbin/nologin" ] ||
@@ -42,6 +42,6 @@ do
     else
 	echo "$u:$h"
     fi
-done < $tmp
+done < "$tmp"
 
 rm -f "$tmp"
