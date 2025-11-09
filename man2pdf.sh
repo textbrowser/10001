@@ -11,15 +11,15 @@ then
     exit 1
 fi
 
-man -t $1 > $1.ps 2>/dev/null && ps2pdf $1.ps 2>/dev/null
+man -t "$1" > "$1.ps" 2>/dev/null && ps2pdf "$1.ps" 2>/dev/null
 
 if [ ! $? -eq 0 ]
 then
-    rm -f $1.ps
+    rm -f "$1.ps"
     exit 1
 fi
 
-rm -f $1.ps
+rm -f "$1.ps"
 
-echo "The manual for $1 was converted to a PDF file and placed " \
+echo "The manual for \"$1\" was converted to a PDF file and placed " \
      "in the current directory."

@@ -5,12 +5,13 @@
 #                           Use stat instead of ls if it's available.
 # Alexis Megas, 07/04/2007. Direct errors to /dev/null.
 # Alexis Megas, 02/23/2014. Verify that the directory is readable.
+# Alexis Megas, 11/08/2025. Enclose file names with quotes when printing.
 
 # List all broken links. Delete them if the -r option is provided.
 
 delete=0
 directory=""
-usage="Usage: $0 -d DIR [-r(emove)]."
+usage="Usage: $0 -d DIRECTORY [-r(emove)]."
 
 while getopts d:r options 2>/dev/null
 do
@@ -31,7 +32,7 @@ elif [ ! -d "$directory" -o \
        ! -w "$directory" -o \
        ! -x "$directory" ]
 then
-    echo "Unable to access the directory $directory."
+    echo "Unable to access the directory \"$directory\"."
     exit 1
 fi
 
@@ -44,21 +45,21 @@ else
     command="ls -L"
 fi
 
-find $directory -type l 2>/dev/null | while read line
+find "$directory" -type l 2>/dev/null | while read line
 do
-    $command $line 1>/dev/null 2>/dev/null
+    $command "$line" 1>/dev/null 2>/dev/null
 
     rc=$?
 
     if [ ! $rc -eq 0 -a $delete -eq 1 ]
     then
-	rm -f $line 2>/dev/null
+	rm -f "$line" 2>/dev/null
 
 	if [ $? -eq 0 ]
 	then
-	    echo "Removed symbolic link $line."
+	    echo "Removed symbolic link \"$line\"."
 	else
-	    echo "Could not remove symbolic link $line."
+	    echo "Could not remove symbolic link \"$line\"."
 	fi
     elif [ ! $rc -eq 0 ]
     then

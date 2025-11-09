@@ -39,9 +39,9 @@ fi
 
 answer=""
 
-for pid in $(ps -U $userid -o pid 2>/dev/null | tail +2 2>/dev/null)
+for pid in $(ps -U "$userid" -o pid 2>/dev/null | tail +2 2>/dev/null)
 do
-    name="$(ps -U $userid -o pid,comm 2>/dev/null | \
+    name="$(ps -U \"$userid\" -o pid,comm 2>/dev/null | \
     	    grep $pid 2>/dev/null | awk '{print $2}' 2>/dev/null)"
 
     if [ -z "$name" ]
@@ -53,9 +53,9 @@ do
     then
 	if [ "$sig" = "-STOP" ]
 	then
-	    echo "Stop $pid ($name)? [a/n/q/y]: \c"
+	    echo "Stop $pid (\"$name\")? [a/n/q/y]: \c"
 	else
-	    echo "Continue $pid ($name)? [a/n/q/y]: \c"
+	    echo "Continue $pid (\"$name\")? [a/n/q/y]: \c"
 	fi
 
 	read answer
@@ -67,9 +67,9 @@ do
 	do
 	    if [ "$sig" = "-STOP" ]
 	    then
-		echo "Stop $pid ($name)? [a/n/q/y]: \c"
+		echo "Stop $pid (\"$name\")? [a/n/q/y]: \c"
 	    else
-		echo "Continue $pid ($name)? [a/n/q/y]: \c"
+		echo "Continue $pid (\"$name\")? [a/n/q/y]: \c"
 	    fi
 
 	    read answer
@@ -90,16 +90,16 @@ do
     then
 	if [ "$sig" = "-STOP" ]
 	then
-	    echo "$pid ($name) stopped."
+	    echo "$pid (\"$name\") stopped."
 	else
-	    echo "$pid ($name) continued."
+	    echo "$pid (\"$name\") continued."
 	fi
     else
 	if [ "$sig" = "-STOP" ]
 	then
-	    echo "Error stopping $pid ($name)."
+	    echo "Error stopping $pid (\"$name\")."
 	else
-	    echo "Error continuing $pid ($name)."
+	    echo "Error continuing $pid (\"$name\")."
 	fi
     fi
 done

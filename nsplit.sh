@@ -27,25 +27,25 @@ then
     exit 1
 elif [ ! -r "$file" ]
 then
-    echo "The file $file is not readable."
+    echo "The file \"$file\" is not readable."
     exit 1
 fi
 
-size=$(ls -l $file 2>/dev/null | awk '{print $5}' 2>/dev/null)
+size=$(ls -l "$file" 2>/dev/null | awk '{print $5}' 2>/dev/null)
 size=$(expr $size / $N 2>/dev/null)
 
 if [ $size -le 0 ]
 then
-    echo "The file $file is too small to be split."
+    echo "The file \"$file\" is too small to be split."
     exit 1
 fi
 
-split -b $size $file $file 2>/dev/null
+split -b $size "$file" "$file" 2>/dev/null
 
 if [ $? -eq 0 ]
 then
-    echo "The file $file was split successfully."
+    echo "The file \"$file\" was split successfully."
 else
-    echo "An error occurred while attempting to split $file."
+    echo "An error occurred while attempting to split \"$file\"."
     exit 1
 fi
