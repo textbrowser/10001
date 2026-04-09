@@ -7,7 +7,9 @@
 
 command1="sudo apt update"
 command2="sudo apt upgrade -y"
-declare -a hosts=("192.168.178.45"
+declare -a hosts=("192.168.178.5"
+		  "192.168.178.20"
+		  "192.168.178.45"
 		  "192.168.178.65")
 
 for i in "${hosts[@]}"
