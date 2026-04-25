@@ -34,6 +34,7 @@ do
     if [ ! -z "$(echo \"$url\" | grep https:// 2>/dev/null)" ]
     then
 	name="$(echo \"$url\" | rev | cut -d '/' -f 1 | rev 2>/dev/null)"
+	name="$(echo \"$name\" | sed s/\"//g 2>/dev/null)"
 
 	if [ -z "$name" ]
 	then
