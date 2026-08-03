@@ -60,8 +60,8 @@ do
 
 	if [ -e "$directory" ]
 	then
-	    echo -n "The directory \"$directory\" already exists. " \
-		    "Performing a GIT-PULL instead... "
+	    /bin/echo -n "The directory \"$directory\" already exists. " \
+		         "Performing a GIT-PULL instead... "
 	    git -C "$directory" pull -q 2>/dev/null
 
 	    if [ $? -eq 0 ]
