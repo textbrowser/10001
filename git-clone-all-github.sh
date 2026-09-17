@@ -74,14 +74,14 @@ do
 	    continue
 	fi
 
-	echo "Cloning \"$url\" into \"$directory\"..."
+	/bin/echo -n "Cloning \"$url\" into \"$directory\"... "
 	git clone -q "$url" "$directory" 2>/dev/null
 
 	if [ $? -eq 0 ]
 	then
-	    echo "Successfully cloned \"$url\" into \"$directory\"."
+	    echo "Success."
 	else
-	    echo "Error cloning \"$url\" into \"$directory\"."
+	    echo "Failure."
 
 	    rc=1
 	fi
